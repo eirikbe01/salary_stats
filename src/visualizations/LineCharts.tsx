@@ -36,12 +36,12 @@ export function toLineChartData(rows: Row[]) {
     else if (row.education === MASTER_CODE) b.master.push(row.salary);
   }
 
-  // Convert to recharts-friendly array, one object per experience
+  
   const data = Array.from(buckets.entries())
     .sort(([a], [b]) => a - b)
     .map(([experience, vals]) => ({
       experience,
-      bachelor: median(vals.bachelor), // could be null if no data
+      bachelor: median(vals.bachelor),
       master: median(vals.master),
       // optional: counts for tooltip/debug
       bachelorN: vals.bachelor.length,

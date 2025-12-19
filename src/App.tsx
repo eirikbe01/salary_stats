@@ -1,32 +1,21 @@
 import './App.css';
-import { Button, Card } from 'pixel-retroui';
-import { workerStats } from './types.ts';
 import { SalaryOverTime } from './visualizations/LineCharts.tsx';
 
 function App() {
   return (
-    <>
-      <SalaryOverTime />
-      {/*
-      <div>
-        <h1 className="text-2xl font-minecraft mb-4">
-          Welcome to My Retro App
-        </h1>
-        <Card className="p-4 mb-4">
-          <h2>This is a pixel-styled card</h2>
-          <p>You can put anything inside!</p>
-        </Card>
-        <Button>Click me!</Button>
-        <Button
-          bg="#c381b5"
-          textColor="#fefcd0"
-          shadow="#fefcd0"
-          className="px-6 py-2"
-        >
-          Custom Button
-        </Button>
-      </div>*/}
-    </>
+    <div className="flex-col m-12">
+      <h1 className="text-2xl">
+        Salary statistics within Tech 2024
+      </h1>
+      <span>Provided by </span>
+      <a href="https://www.kode24.no/" target="_blank">Kode24</a>
+      <div className="flex p-4">
+        <SalaryOverTime />
+      </div>
+
+      <span>Charts made using </span>
+      <a href="https://recharts.github.io/" target="_blank">Recharts</a>
+    </div>
   );
 }
 
