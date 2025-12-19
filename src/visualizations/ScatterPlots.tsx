@@ -11,16 +11,14 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
-type Point = { experience: number; salary: number; education: number };
-
-
 export const ScatterOverview = ({ isAnimationActive = true }) => {
+  console.log(workerStats);
   const data = workerStats
     .filter((worker) => worker.education === 3 || worker.education == 5)
     .map(({ experience, salary, education }) => ({
       experience,
       salary,
-      education
+      education,
     }));
 
   const bachelorData = data.filter((d) => d.education === 3);
@@ -37,7 +35,7 @@ export const ScatterOverview = ({ isAnimationActive = true }) => {
           left: 10,
           bottom: 5,
         }}
-        >
+      >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis
           type="number"
@@ -48,7 +46,7 @@ export const ScatterOverview = ({ isAnimationActive = true }) => {
             position: 'insideBottom',
             offset: -5,
           }}
-          domain={[0, 'dataMax + 1']} 
+          domain={[0, 'dataMax + 1']}
         />
         <YAxis
           type="number"
@@ -63,9 +61,21 @@ export const ScatterOverview = ({ isAnimationActive = true }) => {
             value !== undefined ? `${value.toLocaleString('nb-NO')} kr` : ''
           }
         />
-        <Scatter name="Bachelor" data={bachelorData} opacity={0.5} fill="#8884d8" />
-        <Scatter name="Master" data={masterData} opacity={0.5} fill="#82ca9d" />
-        
+        <Scatter
+          name="Bachelor"
+          data={bachelorData}
+          opacity={0.5}
+          fill="#8884d8"
+          isAnimationActive={isAnimationActive}
+        />
+        <Scatter
+          name="Master"
+          data={masterData}
+          opacity={0.5}
+          fill="#82ca9d"
+          isAnimationActive={isAnimationActive}
+        />
+
         <Legend
           layout="horizontal"
           align="center"

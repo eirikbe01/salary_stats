@@ -15,7 +15,7 @@ type Row = { experience: number; salary: number; education: number };
 const BACHELOR_CODE = 3;
 const MASTER_CODE = 5;
 
-function median(nums: number[]) {
+export function median(nums: number[]) {
   if (nums.length === 0) return null;
   const sorted = [...nums].sort((a, b) => a - b);
   const mid = Math.floor(sorted.length / 2);

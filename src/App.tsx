@@ -1,6 +1,7 @@
 import './App.css';
 import { SalaryOverTime } from './visualizations/LineCharts.tsx';
 import { ScatterOverview } from './visualizations/ScatterPlots.tsx';
+import { PublicVsInhouseVsConsultancy } from './visualizations/BarCharts.tsx';
 
 function App() {
   return (
@@ -10,9 +11,10 @@ function App() {
       <a href="https://www.kode24.no/" target="_blank">
         Kode24
       </a>
-      <div className="flex gap-12">
-          <SalaryOverTime />
-          <ScatterOverview />
+      <div className="grid gap-12">
+        <SalaryOverTime />
+        <ScatterOverview />
+        <PublicVsInhouseVsConsultancy />
       </div>
 
       <span>Charts made using </span>
