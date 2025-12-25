@@ -1,7 +1,8 @@
 import './App.css';
 import { SalaryOverTime } from './visualizations/LineCharts.tsx';
 import { ScatterOverview } from './visualizations/ScatterPlots.tsx';
-import { PublicVsInhouseVsConsultancy } from './visualizations/BarCharts.tsx';
+import { PublicVsInhouseVsConsultancy } from './visualizations/BarCharts/ByJobType.tsx';
+import { SubjectBarChart } from './visualizations/BarCharts/BySubject.tsx';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <SalaryOverTime />
         <ScatterOverview />
         <PublicVsInhouseVsConsultancy />
+        <SubjectBarChart />
       </div>
 
       <span>Charts made using </span>

@@ -9,14 +9,15 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import type { ValueType, NameType } from 'recharts/types/component/DefaultTooltipContent';
-import { median } from './LineCharts.tsx';
-import { workerStats } from '../types.ts';
+import { median } from '../../common/functions.ts';
+import { workerStats } from '../../types.ts';
 
-type Row = {
+type WorkPlaceRow = {
   workPlace: string;
   jobType: string;
   salary: number;
 };
+
 
 function toSector(jobType: string): 'public' | 'private' | 'consultancy' | null {
   const s = jobType.toLowerCase();
@@ -29,7 +30,7 @@ function toSector(jobType: string): 'public' | 'private' | 'consultancy' | null 
   return null; // unknown / ignore
 }
 
-export function toGroupedBarData(rows: Row[]) {
+export function toGroupedBarData(rows: WorkPlaceRow[]) {
   // workplace -> sector -> salaries[]
   const map = new Map<string, Record<'public' | 'private' | 'consultancy', number[]>>();
 

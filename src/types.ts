@@ -1,4 +1,4 @@
-import rawData from './static/salaries.json';
+import rawData from './common/salaries.json';
 
 export interface Worker {
   gender: string;
